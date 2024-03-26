@@ -21,3 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/register' , [\App\Http\Controllers\AuthController::class , 'register']);
 Route::post('/login' , [\App\Http\Controllers\AuthController::class , 'login']);
+Route::post('/logout' , [\App\Http\Controllers\AuthController::class , 'logout']);
+
+
+Route::get('/progres', [\App\Http\Controllers\ProgresController::class , 'index']);
+Route::post('/creatprogres' , [\App\Http\Controllers\ProgresController::class , 'store']);
+Route::post('/updateprogres' ,[\App\Http\Controllers\ProgresController::class , 'update']);
+Route::delete('/deleteprogres/{id}' , [\App\Http\Controllers\ProgresController::class , 'destroy']);

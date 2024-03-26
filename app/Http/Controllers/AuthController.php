@@ -55,6 +55,12 @@ class AuthController extends Controller
         return response()->json([
             'accessToken' =>$token,
             'token_type' => 'Bearer',
+            'user' => auth()->user()
         ]);
+    }
+
+    public function logout() {
+        auth()->logout();
+        return response()->json(['message' => 'You are deconected SuccessFully.']);
     }
 }
